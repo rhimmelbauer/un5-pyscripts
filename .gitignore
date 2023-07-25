@@ -1,0 +1,246 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+static_react/
+static_root/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# celery beat schedule file
+celerybeat-schedule
+celerybeat-schedule.db
+
+#logging
+trainingcamp/logs/*
+!trainingcamp/logs/.gitkeep
+
+# dotenv
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
+
+# virtualenv
+venv/
+ENV/
+tc/
+
+# Spyder project settings
+.spyderproject
+
+# Rope project settings
+.ropeproject
+db.sqlite3
+.vs/Orbital-Houston/v14/.suo
+Orbital-Houston.pyproj
+Orbital-Houston.sln
+
+# Pycharm
+.idea
+
+# OS X
+.DS_Store
+old_db.sqlite
+trainingcamp/media
+
+# react dependencies
+node_modules/
+/.pnp
+.pnp.js
+bundles
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+MANIFEST
+.vscode
+
+# PreCommit
+.pre-commit-config.yaml
+
+# SECRETS SHHH! (Only keep the .enc encoded version)
+setup/staging/config/celery.conf
+setup/staging/config/nginx.conf
+setup/staging/config/trainingcamp.ini
+setup/staging/deploy/bundle_last_month.sh
+setup/staging/deploy/dev-update-tc-sudo.sh
+setup/staging/deploy/dev-update-tc-venv.sh
+setup/staging/deploy/dev-update-tc.sh
+setup/staging/deploy/django_env.sh
+setup/staging/deploy/pgsql_env.sh
+setup/staging/deploy/qa-update-tc-db.sh
+setup/staging/deploy/spawn_thecollective.sh
+setup/staging/deploy/staging-update-tc.sh
+setup/staging/deploy/update.sh
+setup/qa/deploy/bundle_last_month.sh
+setup/qa/deploy/dev-update-tc-db.sh
+setup/qa/deploy/dev-update-tc-sudo.sh
+setup/qa/deploy/dev-update-tc-venv.sh
+setup/qa/deploy/dev-update-tc.sh
+setup/qa/deploy/django_env.sh
+setup/qa/deploy/pgsql_env.sh
+setup/qa/deploy/qa-update-tc.sh
+setup/qa/deploy/revert-update-tc-venv.sh
+setup/qa/deploy/revert-update-tc.sh
+setup/qa/deploy/update.sh
+setup/qa/config/celery.conf
+setup/qa/config/nginx.conf
+setup/qa/config/trainingcamp.ini
+setup/develop/config/.bashrc
+setup/develop/config/.npmrc
+setup/develop/config/celery.conf
+setup/develop/config/nginx.conf
+setup/develop/config/pip.conf
+setup/develop/config/trainingcamp.ini
+setup/develop/config/trainingcamp.ini.tmpl
+setup/develop/config/uwsgi.service.tmpl
+setup/develop/config/uwsgi_params
+setup/develop/deploy/bundle_last_month.sh
+setup/develop/deploy/copy_scripts_config.sh
+setup/develop/deploy/dev-update-tc-sudo.sh
+setup/develop/deploy/dev-update-tc-venv.sh
+setup/develop/deploy/dev-update-tc.sh
+setup/develop/deploy/django_env.sh
+setup/develop/deploy/dump_split_fixtures.sh
+setup/develop/deploy/pgsql_env.sh
+setup/develop/deploy/update.sh
+setup/production/deploy/bundle_last_month.sh
+setup/production/deploy/dev-update-tc-sudo.sh
+setup/production/deploy/dev-update-tc-venv.sh
+setup/production/deploy/dev-update-tc.sh
+setup/production/deploy/django_env.sh
+setup/production/deploy/helpme-zero-out.sh
+setup/production/deploy/heroku-push-db.sh
+setup/production/deploy/pgsql_env.sh
+setup/production/deploy/prod-update-tc.sh
+setup/production/deploy/promote-emc-db-music-vfx.sh
+setup/production/deploy/pull-latest-db.sh
+setup/production/deploy/sharedb_env.sh
+setup/production/deploy/staging-update-tc-db.sh
+setup/production/deploy/update.sh
+setup/production/config/celery.conf
+setup/production/config/nginx.conf
+setup/production/config/trainingcamp.ini
+setup/container/db.env
+setup/container/django-debug.env
+setup/container/django.env
+setup/qa/deploy/qa-update-tc-db.sh
+setup/production/config/golden-tenure-320623-39f236258f69.p12
+setup/production/config/golden-tenure-320623-6b5b1fbbe3ec.json
+.secrets/0.7.x_pass.txt
+setup/develop/config/tc-gtm-credentials.json
+.secrets/client-key.pem
+.secrets/staging-client-key.pem
+.secrets/golden-tenure-320623-e6f1fc81a748.p12
+.secrets/golden-tenure-320623-f0d7ca751287.json
+.secrets/qa-client-cert.pem
+.secrets/qa-client-key.pem
+.secrets/qa-server-ca.pem
+.secrets/client-cert.pem
+.secrets/server-ca.pem
+.secrets/staging-server-ca.pem
+.secrets/staging-client-cert.pem
+setup/yarn_env.sh
+setup/.fuse_hidden00345a7e00000006
+.secrets/pip_gcloud.conf
+.secrets/pip.conf
+setup/staging/deploy/copy_wml_keys.sh
+setup/staging/deploy/init_wml_keys.sh
+setup/production/deploy/copy_custom_keys.sh
+setup/production/deploy/copy_tcplat_keys.sh
+setup/production/deploy/init_dns_certs.sh
+setup/production/deploy/renew_certs.sh
+setup/develop/deploy/django_gc_env.sh
+setup/develop/deploy/dev-update-tc-cloud.sh
+setup/qa/deploy/update_database_only.sh
+setup/qa/deploy/update_db_again.sh
+setup/qa/deploy/update-tc-servers.sh
+setup/qa/deploy/update_to_gc.sh
+setup/qa/deploy/update_to_gc_sudo.sh
+setup/qa/deploy/django_gc_env.sh
+setup/staging/deploy/update_database_only.sh
+setup/staging/deploy/update-tc-servers.sh
+setup/staging/deploy/django_gc_env.sh
+setup/production/deploy/update_all_subdomains.sh
+setup/production/deploy/update-tc-servers.sh
+setup/production/deploy/django_gc_env.sh
+setup/production/deploy/update-gc.sh
+setup/production/deploy/update_only_vm.sh
+setup/production/deploy/django_shell_prod.sh
+setup/production/deploy/rollback_1_version.sh
+.secrets/gtm-tqj6w2h-ztflm-c313ea935708.json
+.secrets/gtm-tqj6w2h-ztflm-9389dead93a6.json
