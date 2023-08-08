@@ -4,13 +4,6 @@ print("hello Unreal Project")
 
 root_dir = '/Game'
 
-
-
-
-
-
-
-
 ############# Editor Asset Library
 def get_asset(asset_path):
     eal = unreal.EditorAssetLibrary
@@ -149,15 +142,6 @@ def get_static_mesh_instance_count():
     for static_mesh_actor in static_mesh_actors:
         if static_mesh_actor not in processed_actors:
             processed_actors.append(static_mesh_actor)
-
-
-
-glow = load_asset('/Game/FindReplaceMatExample/ExampleMats/M_FRMExampleAfter.M_FRMExampleAfter')
-
-print(unreal.MaterialEditingLibrary.get_material_default_vector_parameter_value(glow, 'Color'))
-unreal.MaterialEditingLibrary.set_material_instance_vector_parameter_value(glow, 'Color', unreal.LinearColor(r=0.5, g=0.0, b=0.0, a=1.0))
-unreal.MaterialEditingLibrary.update_material_instance(glow)
-print(unreal.MaterialEditingLibrary.get_material_default_vector_parameter_value(glow, 'Color'))
 
 
 
