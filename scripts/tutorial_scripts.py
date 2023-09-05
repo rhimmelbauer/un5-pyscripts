@@ -26,7 +26,6 @@ def set_asset_color(asset_path):
 
 
 
-
 def list_asset_paths():
     eal = unreal.EditorAssetLibrary
 
