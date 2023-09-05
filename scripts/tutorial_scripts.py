@@ -34,19 +34,25 @@ def list_asset_paths():
     for asset_path in asset_paths:
         print(asset_path)
 
-def get_asset_class_by_type(class_type=None):
+
+def get_assets_by_class_name(directory=None, class_name=None):
     eal = unreal.EditorAssetLibrary
 
-    asset_paths = eal.list_assets(root_dir)
+    if not directory:
+        directory = '/Game'
+
+    asset_paths = eal.list_assets(directory)
     assets = []
 
     for asset_path in asset_paths:
         asset_data = eal.find_asset_data(asset_path)
-        asset_class = asset_data.asset_class
-        if asset_class is None:
-            assets.append(asset_class.get_asset())
-        elif asset_class == class_type:
-            assets.append(asset_data.get_asset())
+        asset_class = asset_data.get_class().get_name()
+
+        if class_name is None:
+            assets.append(asset_data)
+
+        if asset_class == class_name:
+            assets.append(asset_data)
     
     return assets
 
