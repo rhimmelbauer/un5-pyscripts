@@ -18,3 +18,11 @@ Initial exploration and evaluation on how Python Scripting can help Unreal Engin
 - [Unreal Python API](https://docs.unrealengine.com/5.2/en-US/PythonAPI/)
 - [Scripting the Unreal Editor Using Python](https://docs.unrealengine.com/5.2/en-US/scripting-the-unreal-editor-using-python/)
 - [Automatic material creation](https://www.rendereverything.com/automatic-material-creation-in-unreal-engine-with-python/)
+
+
+
+
+## Requirements
+- Have enabled `Python Editor Script Plugin` and `Script Plugin` in you project.
+- Under `Project Settings -> Python -> Additional Paths` add this project directory to it. 
+- Have installed TAPython
