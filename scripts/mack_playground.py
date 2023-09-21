@@ -18,13 +18,56 @@ def get_connection_info(connection, expression, node_list):
 
 # reusable function, to be expanded and generalized further
 # relies on TAPython plugin
-# currently takes a direct path to the material, but in the future should also be able to search within the project or a given directory
-def find_and_replace(material_path, source_type, replacement_type, replacement_path, custom_name="", delete_nodes=True):
-    material = load_asset(material_path)
+def find_and_replace(
+        source_type,
+        replacement_type,
+        replacement_path,
+        material_path="",
+        directory_path="",
+        recursive_search=True,
+        material_name="",
+        custom_name="",
+        delete_nodes=True
+    ):
+
+    if not material_path and not directory_path:
+        print("Please supply a path to the material or a directory path to search under")
+        return
+
+    to_search = []
+
+    if material_path:
+        mat = load_asset(material_path)
+        to_search.append(mat)
+    else:
+        asset_reg = unreal.AssetRegistryHelpers.get_asset_registry()
+        materials = [asset for asset in asset_reg.get_assets_by_path(directory_path, recursive=recursive_search) if asset.asset_class_path.asset_name == "Material"]
+        if material_name:
+            for mat in materials:
+                if mat.asset_name == material_name:
+                    to_search.append(mat.get_asset())
+        else:
+            to_search = [mat.get_asset() for mat in materials]
+
+    for material in to_search:
+        perform_find_replace(material, source_type, replacement_type, replacement_path, custom_name, delete_nodes)
+
+def perform_find_replace(
+        material,
+        source_type,
+        replacement_type,
+        replacement_path,
+        custom_name="",
+        delete_nodes=True
+    ):
     replacement_asset = load_asset(replacement_path)
 
     expressions = unreal.PythonMaterialLib.get_material_expressions(material)
     to_replace = [expression for expression in expressions if source_type in expression.get_name()]
+
+    if not to_replace:
+        # no matches found
+        return
 
     # create new nodes to replace the old ones
     new_nodes = []
@@ -39,7 +82,8 @@ def find_and_replace(material_path, source_type, replacement_type, replacement_p
             new_node.set_editor_property("texture", replacement_asset)
 
         if custom_name:
-            new_node.set_editor_property("parameter_name", custom_name + " {}".format(index + 1))
+            new_name = custom_name + " {}".format(index + 1) if len(to_replace) > 1 else custom_name
+            new_node.set_editor_property("parameter_name", new_name)
         new_nodes.append(new_node)
 
     # replace connections
@@ -72,8 +116,24 @@ def find_and_replace(material_path, source_type, replacement_type, replacement_p
         for node in to_replace:
             unreal.MaterialEditingLibrary.delete_material_expression(material, node)
 
+# material path example
+'''
 find_and_replace(
     material_path="/Game/FindReplaceMatExample/M_TestOnMeToo.M_TestOnMeToo",
+    source_type="MaterialExpressionVertexColor",
+    replacement_type=unreal.MaterialExpressionTextureSampleParameter2D,
+    replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M.T_GenericBrickGlass_M",
+    custom_name="RGB Mask",
+    delete_nodes=False
+)
+'''
+
+# directory path example
+# searches recursively by default
+find_and_replace(
+    directory_path="/Game/FindReplaceMatExample",
+    #material_name="M_TestOnMeToo",
+    #recursive_search=False,
     source_type="MaterialExpressionVertexColor",
     replacement_type=unreal.MaterialExpressionTextureSampleParameter2D,
     replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M.T_GenericBrickGlass_M",
