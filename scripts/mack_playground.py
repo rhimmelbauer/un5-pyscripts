@@ -119,10 +119,10 @@ def perform_find_replace(
 # material path example
 '''
 find_and_replace(
-    material_path="/Game/FindReplaceMatExample/M_TestOnMeToo.M_TestOnMeToo",
+    material_path="/Game/FindReplaceMatExample/M_TestOnMeToo",
     source_type="MaterialExpressionVertexColor",
     replacement_type=unreal.MaterialExpressionTextureSampleParameter2D,
-    replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M.T_GenericBrickGlass_M",
+    replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M",
     custom_name="RGB Mask",
     delete_nodes=False
 )
@@ -136,7 +136,7 @@ find_and_replace(
     #recursive_search=False,
     source_type="MaterialExpressionVertexColor",
     replacement_type=unreal.MaterialExpressionTextureSampleParameter2D,
-    replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M.T_GenericBrickGlass_M",
+    replacement_path="/Game/FindReplaceMatExample/T_GenericBrickGlass_M",
     custom_name="RGB Mask",
     delete_nodes=False
 )
